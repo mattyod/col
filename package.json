@@ -1,0 +1,30 @@
+{
+    "name": "col",
+    "description": "Tiny simple colour logger",
+    "version": "0.0.1",
+    "keywords": ["loggin", "console", "colours"],
+    "author": {
+        "name": "Matthew O'Donoghue"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mattyod/col"
+    },
+    "bugs": {
+        "url": "https://github.com/mattyod/col/issues"
+    },
+    "main": "./col.js",
+    "devDependencies": {
+        "mocha": "1.13.x",
+        "sinon": "1.7.x",
+        "chai": "1.7.x",
+        "sinon-chai": "2.4.x"
+    },
+    "scripts": {
+        "test": "mocha --reporter tap test"
+    },
+    "engines": {
+        "node": "0.10.x",
+        "npm": "1.3.x"
+    }
+}
