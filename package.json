@@ -1,7 +1,7 @@
 {
     "name": "col",
     "description": "Tiny simple colour logger",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "keywords": ["logging", "console", "colours"],
     "author": {
         "name": "Matthew O'Donoghue"

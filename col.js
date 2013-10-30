@@ -1,5 +1,7 @@
 'use strict';
 
+var app = require('what-app');
+
 var colors = {
     error: '\u001b[31m',
     warn: '\u001b[33m',
@@ -26,7 +28,7 @@ module.exports = {
     },
 
     log: function (msg) {
-        console.log(colors.app + 'App ' + msg);
+        console.log(colors.app + app + ' ' + msg);
     }
 
 };
