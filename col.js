@@ -3,32 +3,32 @@
 var app = require('what-app');
 
 var colors = {
-    error: '\u001b[31m',
-    warn: '\u001b[33m',
-    normal: '\u001b[39m',
-    app: '\u001b[32m'
+  error: '\u001b[31m',
+  warn: '\u001b[33m',
+  normal: '\u001b[39m',
+  app: '\u001b[32m'
 };
 
 module.exports = {
 
-    error: function (msg) {
-        this.log(colors.error + 'ERROR: ' + colors.normal + ' ' + msg);
-    },
+  error: function (msg) {
+    this.log(colors.error + 'ERROR: ' + colors.normal + ' ' + msg);
+  },
 
-    warn: function (msg) {
-        this.log(colors.warn + 'WARNING: ' + colors.normal + ' ' + msg);
-    },
+  warn: function (msg) {
+    this.log(colors.warn + 'WARNING: ' + colors.normal + ' ' + msg);
+  },
 
-    info: function (msg) {
-        console.log('    ', msg);
-    },
+  info: function (msg) {
+    console.log('    ', msg);
+  },
 
-    success: function (msg) {
-        this.log(colors.normal + msg);
-    },
+  success: function (msg) {
+    this.log(colors.normal + msg);
+  },
 
-    log: function (msg) {
-        console.log(colors.app + app + ' ' + msg);
-    }
+  log: function (msg) {
+    console.log(colors.app + app + ' ' + msg);
+  }
 
 };
