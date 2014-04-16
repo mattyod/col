@@ -15,9 +15,23 @@ describe('col', sandbox(function () {
     });
 
     it('logs the message as an error', function () {
-      var msg = '\u001b[31mERROR: \u001b[39m foo';
+      var msg = '\u001b[31mERROR: \u001b[39mfoo';
 
       col.log.should.have.been.calledWith(msg);
+    });
+
+    describe('with multiple arguments', function () {
+
+      beforeEach(function () {
+        col.error('foo', 'bar', 'baz');
+      });
+
+      it('joins the message and logs it as an error', function () {
+        var msg = '\u001b[31mERROR: \u001b[39mfoo bar baz';
+
+        col.log.should.have.been.calledWith(msg);
+      });
+
     });
 
   });
@@ -25,13 +39,27 @@ describe('col', sandbox(function () {
   describe('warn', function () {
 
     beforeEach(function () {
-      col.error('foo');
+      col.warn('foo');
     });
 
-    it('logs the message as an error', function () {
-      var msg = '\u001b[31mERROR: \u001b[39m foo';
+    it('logs the message as a warning', function () {
+      var msg = '\u001b[33mWARNING: \u001b[39mfoo';
 
       col.log.should.have.been.calledWith(msg);
+    });
+
+    describe('with multiple arguments', function () {
+
+      beforeEach(function () {
+        col.warn('foo', 'bar', 'baz');
+      });
+
+      it('joins the message and logs it as an error', function () {
+        var msg = '\u001b[33mWARNING: \u001b[39mfoo bar baz';
+
+        col.log.should.have.been.calledWith(msg);
+      });
+
     });
 
   });
@@ -42,10 +70,24 @@ describe('col', sandbox(function () {
       col.success('foo');
     });
 
-    it('logs the message as an info', function () {
+    it('logs the message as a success', function () {
       var msg = '\u001b[39mfoo';
 
       col.log.should.have.been.calledWith(msg);
+    });
+
+    describe('with multiple arguments', function () {
+
+      beforeEach(function () {
+        col.success('foo', 'bar', 'baz');
+      });
+
+      it('joins the message and logs it as an error', function () {
+        var msg = '\u001b[39mfoo bar baz';
+
+        col.log.should.have.been.calledWith(msg);
+      });
+
     });
 
   });

@@ -9,26 +9,40 @@ var colors = {
   app: '\u001b[32m'
 };
 
+var join = function () {
+  var i = 1, msg = '';
+
+  for (var arg in arguments) {
+    if (arguments.hasOwnProperty(arg)) {
+      msg = msg + arguments[arg];
+      msg = (i < arguments.length) ? msg + ' ' : msg;
+      i += 1;
+    }
+  }
+
+  return msg;
+};
+
 module.exports = {
 
-  error: function (msg) {
-    this.log(colors.error + 'ERROR: ' + colors.normal + ' ' + msg);
+  error: function () {
+    this.log(colors.error + 'ERROR: ' + colors.normal + join.apply(this, arguments));
   },
 
-  warn: function (msg) {
-    this.log(colors.warn + 'WARNING: ' + colors.normal + ' ' + msg);
+  warn: function () {
+    this.log(colors.warn + 'WARNING: ' + colors.normal + join.apply(this, arguments));
   },
 
-  info: function (msg) {
-    console.log('    ', msg);
+  info: function () {
+    console.log('    ', join.apply(this, arguments));
   },
 
-  success: function (msg) {
-    this.log(colors.normal + msg);
+  success: function () {
+    this.log(colors.normal + join.apply(this, arguments));
   },
 
-  log: function (msg) {
-    console.log(colors.app + app + ' ' + msg);
+  log: function () {
+    console.log(colors.app + app + ' ' + join.apply(this, arguments));
   }
 
 };
